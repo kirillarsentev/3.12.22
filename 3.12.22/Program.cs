@@ -11,12 +11,12 @@ namespace _3._12._22
     {
         static void Main(string[] args)
         {
-            //string path = "note1.txt";
-            //using (StreamWriter writer = new StreamWriter(path, true))
-            //{
-            //    writer.WriteLineAsync("Addition");
-            //    writer.WriteAsync("4,5");
-            //}
+            string path = "note1.txt";
+            using (StreamWriter writer = new StreamWriter(path, true))
+            {
+                writer.WriteLineAsync("Addition");
+                writer.WriteAsync("4,5");
+            }
 
             string path1 = "note1.txt";
             // асинхронное чтение
