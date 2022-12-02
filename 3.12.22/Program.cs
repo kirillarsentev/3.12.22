@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _3._12._22.Clases;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -80,12 +81,39 @@ namespace _3._12._22
 
 
             Console.WriteLine("Задача 2");
+            Employees employees1 = new Employees();
+            Employees employees2 = new Employees();
+            Employees employees3 = new Employees();
+            Console.WriteLine("Введите предстоящее событие из списка" + '\n' +  "События : " + '\n' + "День первокурсника" + '\n' 
+                + "Посвящение в первокурсники" + '\n' + "Студбатл");
+            string event_name = Console.ReadLine();
 
-
+            if (event_name == "День первокурсника")
+            {
+                Event += employees1.EmployeeReaction;
+                Event("Ура!");
+            }
+            else if (event_name == "Посвящение в первокурсники")
+            {
+                Event += employees2.EmployeeReaction;
+                Event("Ура! Снова пить!");
+            }
+            else if (event_name == "Студбатл")
+            {
+                Event += employees3.EmployeeReaction;
+                Event("Фу, только не я");
+            }
+            else
+            {
+                Console.WriteLine("Нет такого предстоящего события, тупица");
+            }
 
 
 
 
         }
+        public static event ShowReaction Event;
+        
     }
+    public delegate void ShowReaction(string react);
 }
